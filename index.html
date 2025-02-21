@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hii!!</title>
+
+    <!-- Prevent Instagram/Facebook from generating a preview -->
+    <meta name="robots" content="noimageindex, noarchive">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* First Page (Envelope Screen) */
+        #envelopeScreen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white; /* White background */
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Envelope Style */
+        #envelope {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #envelope:hover {
+            transform: scale(1.1);
+        }
+
+        /* Second Page (Letter Screen) */
+        #letterScreen {
+            display: none;
+            height: 100vh;
+            background-color: #fce4ec; /* Soft pastel pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Confession Letter */
+        #letter {
+            max-width: 90%;
+            max-height: 70vh;
+            overflow-y: auto;
+            text-align: justify;
+            padding: 20px;
+            background-color: #e6d4f1; /* Soft pastel purple */
+            color: #333;
+            border: 2px solid #b083d7;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        #letter p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Scrollbar Styling */
+        #letter::-webkit-scrollbar {
+            width: 8px;
+        }
+        #letter::-webkit-scrollbar-thumb {
+            background-color: #b083d7;
+            border-radius: 4px;
+        }
+        #letter::-webkit-scrollbar-track {
+            background-color: #f0f0f0;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Return Button */
+        #return {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #b083d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none;
+        }
+
+        #return:hover {
+            background-color: #8d5ab5;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- First Page (Envelope) -->
+    <div id="envelopeScreen">
+        <img id="envelope" src="https://i.pinimg.com/736x/a3/0b/ca/a30bca09cf1540bba00ffefc07e84d8d.jpg" alt="Cute Envelope" onclick="openEnvelope()">
+    </div>
+
+    <!-- Second Page (Confession Letter) -->
+    <div id="letterScreen">
+        <div id="letter">
+            <p>Hii. how have you been? It has been a while since we talked haha anyway this might sound cringeworthy to you or I don't know,  I have always liked writing love letters. But this is my first time giving it to someone, this makes me so nervous and ashamed haha but why not right? My thoughts are drowning me lately then I listen to this song that just came up in my playlist it's Solomon by Munimuni, they're my favorite comfort artist I just love their lyrics, and it's so meaningful I always listen to them and enjoy that song and I never relate to their song before then I thought of you, it somehow feels different now. I admire you genuinely, you're comforting to be with though we only met online I know it is sooo hard to believe right? but yeah it just happened I don't want to sound so clingy haha I think I got used to your uh presence. like it is okay not to talk always since we are both busy with our different things in life. there's a looot lottsss of reasons why I like you haha. it's like 40% then the rest is all about what I feel. I wish I could tell you more about that, it must be weird to only know it through this.</p>
+
+
+        <p>I can’t believe I liked you so quickly, its just a little crush on you before but i didn't realized it grows, especially after giving up on that feeling for so long. I always held myself back because I never seem to be lucky when it comes to liking someone. I apologize if this will make you uncomfortable, it's been a long time since I like someone. So yeah after that long yap that's the only word I want to say😂 that I like you so much!:) </p>
+
+
+        <p>Lastly I just wanted to say that I wish you all the best in life, may you always have happiness, success, and good luck in everything you do, and even though we’re no longer in touch, I sincerely hope life treats you well and you have a great future ahead. Im always here for you if need to talk !! I missed you!!</p>
+        </div>
+        <button id="return" onclick="goBack()">Return</button>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            document.getElementById("envelopeScreen").style.display = "none";
+            document.getElementById("letterScreen").style.display = "flex";
+            document.getElementById("return").style.display = "block";
+        }
+
+        function goBack() {
+            document.getElementById("letterScreen").style.display = "none";
+            document.getElementById("envelopeScreen").style.display = "flex";
+        }
+    </script>
+
+</body>
+</html>
